@@ -1,5 +1,5 @@
 # Pyxis
-All in one discord.py bot with economy, leveling, fun, etc
+All in one discord.py bot with economy, leveling, fun, giveaways, etc
 # Pyxis Discord.py Bot
 
 Pyxis is a versatile bot built using the Discord.py library. It features a variety of functionalities, including economy, miscellaneous commands, and leveling system. This bot is perfect for enhancing your Discord server with engaging and interactive features.
@@ -20,6 +20,12 @@ Pyxis is a versatile bot built using the Discord.py library. It features a varie
 - **Experience Points:** Users gain experience points for chatting and interacting in the server.
 - **Levels:** Users level up based on their experience points.
 - **Leaderboard:** Display the top users based on their levels.
+
+### Giveaways
+- **Role Requirement:** Set specific roles that users must have to participate in giveaways.
+- **Customizable Giveaways:** Create custom giveaways with timers and buttons for user interaction.
+- **Timers:** Set timers for giveaways to automatically end after a specified duration.
+- **Buttons:** Allow users to interact with giveaway messages using buttons, making participation easy and intuitive.
 
 ## Usage
 
