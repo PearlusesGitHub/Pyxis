@@ -81,7 +81,7 @@ class Enter(discord.ui.View):
                 timestamp=datetime.datetime.now()
             )
             em.set_author(
-                name=f"{interaction.user.name}#{interaction.user.discriminator}",
+                name=f"{interaction.user.name}",
                 icon_url=f'{interaction.user.avatar.url}'
             )
             leave = Leave()
@@ -101,7 +101,7 @@ class Enter(discord.ui.View):
                 color=discord.Colour.green()
             )
             em1.set_author(
-                name=f"{interaction.user.name}#{interaction.user.discriminator}",
+                name=f"{interaction.user.name}",
                 icon_url=f'{interaction.user.avatar.url}'
             )
             await interaction.response.send_message(
@@ -127,7 +127,7 @@ class Leave(discord.ui.View):
                 color=discord.Color.red()
             )
             em.set_author(
-                name=f"{interaction.user.name}#{interaction.user.discriminator}",
+                name=f"{interaction.user.name}",
                 icon_url=f'{interaction.user.avatar.url}'
             )
             await interaction.response.send_message(embed=em, ephemeral=True)
@@ -137,7 +137,7 @@ class Leave(discord.ui.View):
                 color=discord.Color.red()
             )
             em.set_author(
-                name=f"{interaction.user.name}#{interaction.user.discriminator}",
+                name=f"{interaction.user.name}",
                 icon_url=f'{interaction.user.avatar.url}'
             )
             await interaction.response.send_message(embed=em, ephemeral=True)
@@ -210,7 +210,7 @@ class Giveaway(commands.GroupCog, name="giveaway"):
         )
         gw.add_field(name=":medal: Winners", value=f"{winners}")
         gw.add_field(name=":crown: Role required", value=f"{role.mention}" if role else "None")
-        gw.set_footer(text=f"Hosted by {interaction.user.name}#{interaction.user.discriminator}", icon_url=f'{interaction.user.avatar.url}')
+        gw.set_footer(text=f"Hosted by {interaction.user.name}", icon_url=f'{interaction.user.avatar.url}')
         await view.wait()
         button = Enter()
         if view.value is None:
@@ -242,7 +242,7 @@ class Giveaway(commands.GroupCog, name="giveaway"):
             )
             edited_gw.add_field(name=":medal: Winners", value=f"{winners}")
             edited_gw.add_field(name=":crown: Role required", value=f"{role.mention}" if role else "None")
-            edited_gw.set_footer(text=f"Hosted by {interaction.user.name}#{interaction.user.discriminator}", icon_url=f'{interaction.user.avatar.url}')
+            edited_gw.set_footer(text=f"Hosted by {interaction.user.name}", icon_url=f'{interaction.user.avatar.url}')
             await msg.edit(
                 content=f"{emoji} Giveaway Ended {emoji}",
                 embeds=[edited_gw, embed],
