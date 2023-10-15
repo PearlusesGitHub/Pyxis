@@ -44,10 +44,6 @@ To use the bot, simply invite it to your server and start using the commands. Co
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or create a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
 ---
 
 Feel free to customize this `README.md` according to your project's specific details and requirements. Good luck with your Discord.py bot development! 😊
