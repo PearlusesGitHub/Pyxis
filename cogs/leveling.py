@@ -75,9 +75,7 @@ class Leveling(commands.Cog):
         with open('users.json', 'r') as f:
             users = json.load(f)
         await update_data(users, message.author)
-        channels = [904253543203082280, 934433623321493574, 940799539965747200, 901583076411461722, 901583274143539200,
-                    914447006041264170, 1028502392314007675]
-        if not message.author.bot and message.channel.id not in channels:
+        if not message.author.bot:
             with open('users.json', 'r') as f:
                 users = json.load(f)
 
@@ -127,8 +125,8 @@ class Leveling(commands.Cog):
             color=discord.Color.random(),
             timestamp=ctx.message.created_at
         )
-        em.set_footer(text=f"Made by {owner.display_name}#{owner.discriminator}", icon_url=f'{owner.avatar.url}')
-        em.set_author(name=f"{member.display_name}#{member.discriminator}", icon_url=member.avatar.url)
+        em.set_footer(text=f"Made by {owner.display_name}", icon_url=f'{owner.avatar.url}')
+        em.set_author(name=f"{member.display_name}", icon_url=member.avatar.url)
         em.add_field(name="Level", value=f"{lvl}", inline=False)
         em.add_field(name="Experience", value=f"{experience}", inline=False)
         em.add_field(name="Rank", value=f"{ordinal(n=pos)} out of {len(leader_board)} users", inline=False)
@@ -156,7 +154,7 @@ class Leveling(commands.Cog):
             description="Following members are on the top of the leaderboard",
             color=discord.Color.random())
         owner = await self.bot.fetch_user(869061991141101608)
-        em.set_footer(text=f"Made by {owner.display_name}#{owner.discriminator}", icon_url=owner.avatar.url)
+        em.set_footer(text=f"Made by {owner.display_name}", icon_url=owner.avatar.url)
         await ctx.defer(ephemeral=True)
         m = await ctx.send(embed=em)
         index = 1
