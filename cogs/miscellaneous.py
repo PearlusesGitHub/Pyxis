@@ -59,7 +59,7 @@ class Miscellaneous(commands.Cog):
                     value=
                     f"[JPG]({user.avatar.with_static_format('jpg')}) | [PNG]({user.avatar.with_static_format('png')}) | [GIF]({user.avatar.with_format('gif')})"
                 )
-                embed.set_footer(text=f"Made by {owner.display_name}#{owner.discriminator}", icon_url=owner.avatar.url)
+                embed.set_footer(text=f"Made by {owner.display_name}", icon_url=owner.avatar.url)
                 await ctx.send(embed=embed)
             else:
                 url = user.avatar.url
@@ -75,7 +75,7 @@ class Miscellaneous(commands.Cog):
                     value=
                     f"[JPG]({user.avatar.with_static_format('jpg')}) | [PNG]({user.avatar.with_static_format('png')})"
                 )
-                embed.set_footer(text=f"Made by {owner.display_name}#{owner.discriminator}", icon_url=owner.avatar.url)
+                embed.set_footer(text=f"Made by {owner.display_name}", icon_url=owner.avatar.url)
                 await ctx.send(embed=embed)
 
     @commands.hybrid_command(name="ui", description="Shows useful information about a user.")
@@ -111,7 +111,7 @@ class Miscellaneous(commands.Cog):
         )
         em.set_thumbnail(url=f"{user.avatar.url}")
         em.set_author(name=f"{user.display_name}'s User Info", icon_url=f"{user.avatar.url}")
-        em.set_footer(text=f"Requested by {ctx.author.name}#{ctx.author.discriminator} | Made by {owner.display_name}#{owner.discriminator}")
+        em.set_footer(text=f"Requested by {ctx.author.name} | Made by {owner.display_name}")
 
         await ctx.send(embed=em)
 
