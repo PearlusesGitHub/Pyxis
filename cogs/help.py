@@ -3,20 +3,6 @@ from discord.ext.commands import HybridCommand
 from discord.ext import commands
 from discord.errors import Forbidden
 
-"""This custom help command is a perfect replacement for the default one on any Discord Bot written in Discord.py!
-However, you must put "bot.remove_command('help')" in your bot, and the command must be in a cog for it to work.
-
-Original concept by Jared Newsom (AKA Jared M.F.)
-[Deleted] https://gist.github.com/StudioMFTechnologies/ad41bfd32b2379ccffe90b0e34128b8b
-Rewritten and optimized by github.com/nonchris
-https://gist.github.com/nonchris/1c7060a14a9d94e7929aa2ef14c41bc2
-
-You need to set three variables to make that cog run.
-Have a look at line 51 to 57
-"""
-
-
-
 class Help(commands.Cog):
     """Sends this help message"""
 
