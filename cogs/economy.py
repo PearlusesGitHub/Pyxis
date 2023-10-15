@@ -77,7 +77,7 @@ class Economy(commands.Cog):
         with open('padlock.json', 'r') as f:
             padlockers = json.load(f)
         em = discord.Embed(
-            title=f"{user.name}#{user.discriminator}'s balance",
+            title=f"{user.name}'s balance",
             description=f":moneybag: {user.mention} has **{str(bal)} coins**!",
             color=discord.Colour.random(),
             timestamp=datetime.now()
@@ -96,7 +96,7 @@ class Economy(commands.Cog):
             description=f"You work for half an hour and earn **{coins} coins**!",
             color=discord.Colour.green()
         )
-        em.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}",
+        em.set_author(name=f"{ctx.author.name}",
                       icon_url=f"{ctx.author.avatar.url}")
         await ctx.send(embed=em)
         await update_bank_data(ctx.author, coins)
@@ -111,7 +111,7 @@ class Economy(commands.Cog):
             color=discord.Color.green(),
             description=f"Collected daily income! You got **{coins} coins**."
         )
-        em.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}",
+        em.set_author(name=f"{ctx.author.name}",
                       icon_url=f"{ctx.author.avatar.url}")
         await ctx.send(embed=em)
         await update_bank_data(ctx.author, coins)
@@ -126,7 +126,7 @@ class Economy(commands.Cog):
                 f"You've already collected today's daily income, try again in {hours} hours and {round(minutes / 60)} minutes.",
                 color=discord.Color.from_rgb(212, 0, 0))
             em.set_author(name=f"{ctx.author.name}",
-                          icon_url=f'{ctx.author.avatar.url}#{ctx.author.discriminator}')
+                          icon_url=f'{ctx.author.avatar.url}')
             await ctx.defer(ephemeral=True)
             await ctx.send(embed=em)
 
@@ -139,7 +139,7 @@ class Economy(commands.Cog):
                 description=
                 f"Quit working so hard. You can work again in {minutes} minutes and {seconds} seconds.",
                 color=discord.Color.from_rgb(212, 0, 0))
-            em.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}",
+            em.set_author(name=f"{ctx.author.name}",
                           icon_url=f'{ctx.author.avatar.url}')
             await ctx.defer(ephemeral=True)
             await ctx.send(embed=em)
@@ -157,7 +157,7 @@ class Economy(commands.Cog):
                 timestamp=datetime.now(),
                 color=discord.Color.green()
             )
-            em.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}", icon_url=f"{ctx.author.avatar.url}")
+            em.set_author(name=f"{ctx.author.name}", icon_url=f"{ctx.author.avatar.url}")
             await ctx.send(embed=em)
             await update_bank_data(ctx.author, coins)
         elif coins < 0:
@@ -167,7 +167,7 @@ class Economy(commands.Cog):
                 timestamp=datetime.now(),
                 color=discord.Color.from_rgb(212, 0, 0)
             )
-            em.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}",
+            em.set_author(name=f"{ctx.author.name}",
                           icon_url=f'{ctx.author.avatar.url}')
             await ctx.send(embed=em)
             await update_bank_data(ctx.author, coins)
@@ -182,7 +182,7 @@ class Economy(commands.Cog):
                 f"If you keep committing crimes, you can get caught! " \
                 f"You can commit a crime again in {minutes} minutes and {seconds} seconds.",
                 color=discord.Color.from_rgb(212, 0, 0))
-            em.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}",
+            em.set_author(name=f"{ctx.author.name}",
                           icon_url=f'{ctx.author.avatar.url}')
             await ctx.defer(ephemeral=True)
             await ctx.send(embed=em)
@@ -234,7 +234,7 @@ class Economy(commands.Cog):
             description="The coin is spinning in the air",
             color=discord.Color.from_rgb(255, 255, 255))
         em.set_author(
-            name=f"{ctx.author.name}#{ctx.author.discriminator}",
+            name=f"{ctx.author.name}",
             icon_url=f"{ctx.author.avatar.url}")
         msg = await ctx.send(embed=em)
         await asyncio.sleep(1)
@@ -243,7 +243,7 @@ class Economy(commands.Cog):
             description=f"It landed on {result}, you {'' if won_or_lost > 0 else 'lost 💰'}{abs(won_or_lost)} coins.",
             color=discord.Colour.green() if won_or_lost > 0 else discord.Color.from_rgb(212, 0, 0))
         em1.set_author(
-            name=f"{ctx.author.name}#{ctx.author.discriminator}",
+            name=f"{ctx.author.name}",
             icon_url=f"{ctx.author.avatar.url}")
         await update_bank_data(user=ctx.author, coins=int(won_or_lost))
         await msg.edit(embed=em1)
@@ -259,7 +259,7 @@ class Economy(commands.Cog):
                 description=
                 f"Slow down and try again in {minutes} minutes and  {seconds} seconds.",
                 color=discord.Color.from_rgb(212, 0, 0))
-            em.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}",
+            em.set_author(name=f"{ctx.author.name}",
                             icon_url=f'{ctx.author.avatar.url}')
             await ctx.send(embed=em)
 
@@ -312,7 +312,7 @@ class Economy(commands.Cog):
             description=f"The dice is rolling.",
             color=discord.Color.from_rgb(255, 255, 255))
         em.set_author(
-            name=f"{ctx.author.name}#{ctx.author.discriminator}",
+            name=f"{ctx.author.name}",
             icon_url=f'{ctx.author.avatar.url}')
         msg = await ctx.send(embed=em)
         await asyncio.sleep(1)
@@ -321,7 +321,7 @@ class Economy(commands.Cog):
             description=em_description,
             color=em_color)
         em1.set_author(
-            name=f"{ctx.author.name}#{ctx.author.discriminator}",
+            name=f"{ctx.author.name}",
             icon_url=f'{ctx.author.avatar.url}')
         return await msg.edit(embed=em1)
 
@@ -442,7 +442,7 @@ class Economy(commands.Cog):
                 timestamp=datetime.now(),
                 color=discord.Color.green()
             )
-            em.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}",
+            em.set_author(name=f"{ctx.author.name}",
                         icon_url=f"{ctx.author.avatar.url}")
             await update_bank_data(ctx.author, coins)
             await ctx.send(embed=em)
@@ -453,7 +453,7 @@ class Economy(commands.Cog):
                 timestamp=datetime.now(),
                 color=discord.Color.green()
             )
-            em.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}",
+            em.set_author(name=f"{ctx.author.name}",
                         icon_url=f"{ctx.author.avatar.url}")
             await update_bank_data(ctx.author, coins)
             await ctx.send(embed=em)
@@ -468,7 +468,7 @@ class Economy(commands.Cog):
                 f"You can't beg for long or you'll get caught. "
                 f"You can work again in {minutes} minutes and {seconds} seconds.",
                 color=discord.Color.from_rgb(212, 0, 0))
-            em.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}",
+            em.set_author(name=f"{ctx.author.name}",
                           icon_url=f'{ctx.author.avatar.url}')
             await ctx.defer(ephemeral=True)
             await ctx.send(embed=em)
@@ -503,17 +503,17 @@ class Economy(commands.Cog):
             if random.choice(choice):
                 await update_bank_data(user, -100)
                 await update_bank_data(ctx.author, 100)
-                m = await ctx.reply(f"Attempting to rob **{user.name}#{user.discriminator}**...")
+                m = await ctx.reply(f"Attempting to rob **{user.name}**...")
                 await asyncio.sleep(2)
                 await m.edit(f"Rob successful! You got **100 coins**!")
             else:
                 await update_bank_data(user, 30)
                 await update_bank_data(ctx.author, -30)
-                m = await ctx.reply(f"Attempting to rob **{user.name}#{user.discriminator}**")
+                m = await ctx.reply(f"Attempting to rob **{user.name}**")
                 await asyncio.sleep(2)
                 await m.edit(f"Rob failed! You lost **30 coins**!")
         elif padlockers[str(user.id)]["Padlock"]:
-            await ctx.send(f"Rob failed! **{user.name}#{user.discriminator}** has a padlock.")
+            await ctx.send(f"Rob failed! **{user.name}** has a padlock.")
 
     @rob.error
     async def rob_error(self, ctx, error):
@@ -525,7 +525,7 @@ class Economy(commands.Cog):
                 f"You can't rob again or the FBI will catch you!"
                 f"You can rob again in {minutes} minutes and {seconds} seconds.",
                 color=discord.Color.from_rgb(212, 0, 0))
-            em.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}",
+            em.set_author(name=f"{ctx.author.name}",
                           icon_url=f'{ctx.author.avatar.url}')
             await ctx.defer(ephemeral=True)
             await ctx.send(embed=em)
