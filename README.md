@@ -12,7 +12,7 @@ Pyxis is a versatile bot built using the Discord.py library. It features a varie
 - **Gambling:** Users can gamble their currency for a chance to win more.
 
 ### Miscellaneous
-- **Custom Commands:** Server administrators can create custom commands for specific responses.
+- **Announcements:** Server administrators can create custom announcements.
 - **Reminders:** Users can set reminders for specific events or tasks.
 - **Games:** Play engaging games with your community
 
