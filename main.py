@@ -29,13 +29,6 @@ bot = commands.Bot(
 )
 
 @bot.event
-async def on_message(message):
-    if message.content == any(['<@955013929095016468>', '<@!955013929095016468>']):
-        await message.channel.send(f"{message.author.mention}, my prefix is `,`! Use `,help` to see my commands.")
-    
-    await bot.process_commands(message)
-
-@bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
         await ctx.send("Invalid command. Try using `,help` to see all commands!")
