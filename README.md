@@ -43,7 +43,3 @@ To use the bot, simply invite it to your server and start using the commands. Co
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or create a pull request.
-
----
-
-Feel free to customize this `README.md` according to your project's specific details and requirements. Good luck with your Discord.py bot development! 😊
